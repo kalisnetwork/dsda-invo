@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
-const ProductSchema = new mongoose.Schema(
+const ProductSchema = new Schema(
   {
     userID: {
       type: mongoose.Schema.Types.ObjectId,
@@ -38,5 +38,5 @@ const ProductSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Product = mongoose.model("product", ProductSchema);
-module.exports = Product;
+const Product = model("product", ProductSchema);
+export default Product;

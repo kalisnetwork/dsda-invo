@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
-const SaleSchema = new mongoose.Schema(
+const SaleSchema = new Schema(
     {
         saleId: {
             type: String,
@@ -52,5 +52,5 @@ const SaleSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-const Sales = mongoose.model("sales", SaleSchema);
-module.exports = Sales;
+const Sales = model("sales", SaleSchema);
+export default Sales;

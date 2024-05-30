@@ -5,7 +5,10 @@ import cors from 'cors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
-
+import salesRoutes from './api/routes/salesRoutes.js';
+import productRoutes from './api/routes/productRoutes.js';
+import purchaseRoutes from './api/routes/purchaseRoutes.js';
+import storeRoutes from './api/routes/storeRoutes.js';
 
 dotenv.config();
 
@@ -35,6 +38,10 @@ app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`);
 });
 
+app.use('/api', salesRoutes);
+app.use('/api', productRoutes);
+app.use('/api', purchaseRoutes);
+app.use('/api', storeRoutes);
 
 app.get("/api", function (req, res) {
     res.json({ message: "DSDA Invo api" });
